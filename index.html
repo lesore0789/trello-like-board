@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Trello-like Board</title>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="bg-changer">
+    <p>Background Changer</p>
+    <div id="colorbox"></div>
+  </div>
+
+  <div class="board-name">
+    <input type="text" id="board-name" placeholder="Edit Board Name Here" />
+  </div>
+
+  <div class="board">
+    <form action="" class="todo-form" id="todo-form">
+      <input type="text" name="todo-input" id="todo-input" placeholder="New Task">
+      <button type="submit" class="add-button">Add+</button>
+    </form>
+
+    <div class="lanes">
+      <div class="swim-lane" id="todo-lane">
+        <h3 class="heading">Waiting to Start</h3>
+        <p class="task" draggable="true">Feed the dog <button class="edit-icon"><img src="img/edit.png" alt="edit icon" class="pencil-icon"></button><button class="delete-icon"><img src="img/delete.png" alt="delete icon" class="trash-icon"></button></p>
+        <p class="task" draggable="true">Get groceries<button class="edit-icon"><img src="img/edit.png" alt="edit icon" class="pencil-icon"></button><button class="delete-icon"><img src="img/delete.png" alt="delete icon" class="trash-icon"></button></p>
+        <p class="task" draggable="true">Mow the Lawn<button class="edit-icon"><img src="img/edit.png" alt="edit icon" class="pencil-icon"></button><button class="delete-icon"><img src="img/delete.png" alt="delete icon" class="trash-icon"></button></p>
+      </div>
+      <div class="swim-lane">
+        <h3 class="heading">In Process</h3>
+        <p class="task" draggable="true">Make dinner<button class="edit-icon"><img src="img/edit.png" alt="edit icon" class="pencil-icon"></button><button class="delete-icon"><img src="img/delete.png" alt="delete icon" class="trash-icon"></button></p>
+
+      </div>
+      <div class="swim-lane">
+        <h3 class="heading">Finished</h3>
+        <p class="task" draggable="true">Drink 80oz water<button class="edit-icon"><img src="img/edit.png" alt="edit icon" class="pencil-icon"></button><button class="delete-icon"><img src="img/delete.png" alt="delete icon" class="trash-icon"></button></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

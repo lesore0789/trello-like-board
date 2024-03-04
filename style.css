@@ -125,3 +125,22 @@ body{
   padding-left: 20px;
   padding-right: 10px;
 }
+
+#colorbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.125rem;
+  padding: .6rem;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+}
+
+#colorbox span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}

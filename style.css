@@ -80,6 +80,12 @@ body{
   cursor: pointer;
 }
 
+.add-button:hover {
+  background-color:#000000;
+  color: #FDFDFD;
+  transition: 0.2s;
+}
+
 .lanes {
   display: flex;
   justify-content: center;
@@ -114,19 +120,38 @@ body{
   background: #FFFFFF;
   border-radius: 0.625rem;
   box-shadow: 0px 3px 3px 3px rgb(0 0 0 / 20%);
+  display: flex;
+  justify-content: center;
 }
+
 
 .edit-icon, .delete-icon {
   border: none;
   background: none;
   cursor: pointer;
-
 }
 
-.edit-icon{
+.buttons {
   padding-left: 20px;
-  padding-right: 10px;
+  display: flex;
+  gap: 10px;
 }
+/* .edit-icon i, .delete-icon i {
+  position: relative;
+  right: -5px;
+} */
+
+.edit-icon i:hover{
+  color: #ffa500;
+  transition: 0.2s;
+}
+
+.delete-icon i:hover{
+  color: #ff0000;
+  transition: 0.2s;
+}
+
+
 
 #colorbox {
   display: flex;

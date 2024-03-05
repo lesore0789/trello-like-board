@@ -68,7 +68,7 @@ function displayTasks() {
     div.classList.add('task');
     div.setAttribute('draggable', true);
     div.innerHTML = `
-      <p id="todo-${index}">${item.text} <button class="edit-icon" onclick="editTask(${index})"><img src="img/edit.png" alt="edit icon" class="pencil-icon"></button><button class="delete-icon" onclick="deleteTask(${index})"><img src="img/delete.png" alt="delete icon" class="trash-icon"></button></p>
+      <p id="todo-${index}">${item.text} <div class="buttons"><button class="edit-icon" onclick="editTask(${index})"><i class="fa-solid fa-pencil fa-lg"></i></button><button class="delete-icon" onclick="deleteTask(${index})"><i class="fa-solid fa-trash-can fa-lg"></i></button></div></p>
     `;
     todoLane.appendChild(div);
   });

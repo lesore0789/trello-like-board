@@ -6,6 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <title>Trello-like Board</title>
   <script src="script.js" defer></script>
@@ -29,28 +30,17 @@
     <div class="lanes">
       <div class="swim-lane" id="todo-lane">
         <h3 class="heading">Waiting to Start</h3>
-        <!-- <div class="task" draggable="true"><div class="task" draggable="true">
-          <p id="todo-${index}">Feed the dog <button class="edit-icon"><img src="img/edit.png" alt="edit icon" class="pencil-icon"></button><button class="delete-icon" ><img src="img/delete.png" alt="delete icon" class="trash-icon"></button></p>
+        <!-- <div class="task" draggable="true">
+          <p id="todo-${index}">${item.text} <div class="buttons"><button class="edit-icon" onclick="editTask(${index})"><i class="fa-solid fa-pencil fa-lg"></i></button><button class="delete-icon" onclick="deleteTask(${index})"><i class="fa-solid fa-trash-can fa-lg"></i></button></div></p>
         </div>
-        <div class="task" draggable="true">
-          <p id="todo-${index}">Get Groceries <button class="edit-icon"><img src="img/edit.png" alt="edit icon" class="pencil-icon"></button><button class="delete-icon" ><img src="img/delete.png" alt="delete icon" class="trash-icon"></button></p>
-        </div>
-        <div class="task" draggable="true">
-          <p id="todo-${index}">Mow the lawn <button class="edit-icon"><img src="img/edit.png" alt="edit icon" class="pencil-icon"></button><button class="delete-icon" ><img src="img/delete.png" alt="delete icon" class="trash-icon"></button></p>
-        </div>-->
+        >-->
       </div>
       <div class="swim-lane">
         <h3 class="heading">In Process</h3>
-        <!--<div class="task" draggable="true">
-          <p>Make dinner<button class="edit-icon"><img src="img/edit.png" alt="edit icon" class="pencil-icon"></button><button class="delete-icon"><img src="img/delete.png" alt="delete icon" class="trash-icon"></button></p>
-        </div>-->
 
       </div>
       <div class="swim-lane">
         <h3 class="heading">Finished</h3>
-        <!--<div class="task" draggable="true">
-          <p>Drink 80oz water<button class="edit-icon"><img src="img/edit.png" alt="edit icon" class="pencil-icon"></button><button class="delete-icon"><img src="img/delete.png" alt="delete icon" class="trash-icon"></button></p>
-        </div>-->
       </div>
     </div>
   </div>

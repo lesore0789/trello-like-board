@@ -1,19 +1,19 @@
 // Background Changer
-const colorarray = ["#B3D9F4", "#B3B6F4", "#F4B3E2", "#B3F4CD", "#F3F4B3"];
-const colorbox = document.getElementById("colorbox");
+const colorArray = ["#B3D9F4", "#B3B6F4", "#F4B3E2", "#B3F4CD", "#F3F4B3"];
+const colorBox = document.getElementById("colorbox");
 
-function bgchange(color) {
-  document.body.style.background = colorarray[color];
+function bgChange(i) {
+  document.body.style.background = colorArray[i];
 }
 
 
-colorarray.forEach(function (color, index) {
+colorArray.forEach(function (color, index) {
   let span = document.createElement("span");
   span.style.backgroundColor = color;
   span.addEventListener("click", function () {
-      bgchange(index);
+      bgChange(index);
   });
-  colorbox.appendChild(span);
+  colorBox.appendChild(span);
 });
 
 // Retrieve todo from local storage or initialize an empty array
@@ -70,6 +70,13 @@ function displayTasks() {
     div.innerHTML = `
       <p id="todo-${index}">${item.text} <div class="buttons"><button class="edit-icon" onclick="editTask(${index})"><i class="fa-solid fa-pencil fa-lg"></i></button><button class="delete-icon" onclick="deleteTask(${index})"><i class="fa-solid fa-trash-can fa-lg"></i></button></div></p>
     `;
+    div.addEventListener("dragstart", () => {
+      div.classList.add("is-dragging");
+    });
+
+    div.addEventListener("dragend", () => {
+      div.classList.remove("is-dragging");
+    });
     todoLane.appendChild(div);
   });
 
@@ -104,3 +111,51 @@ function deleteTask(index) {
 function saveToLocalStorage() {
   localStorage.setItem("todo", JSON.stringify(todo));
 }
+
+// Draggable Functioning
+const draggables = document.querySelectorAll(".task");
+const droppables = document.querySelectorAll(".swim-lane");
+
+draggables.forEach((task) => {
+  task.addEventListener("dragstart", () => {
+    task.classList.add("is-dragging");
+  });
+  task.addEventListener("dragend", () => {
+    task.classList.remove("is-dragging");
+  });
+});
+
+droppables.forEach((zone) => {
+  zone.addEventListener("dragover", (e) => {
+    e.preventDefault();
+
+    const bottomTask = insertAboveTask(zone, e.clientY);
+    const curTask = document.querySelector(".is-dragging");
+
+    if (!bottomTask) {
+      zone.appendChild(curTask);
+    } else {
+      zone.insertBefore(curTask, bottomTask);
+    }
+  });
+});
+
+const insertAboveTask = (zone, mouseY) => {
+  const els = zone.querySelectorAll(".task:not(.is-dragging)");
+
+  let closestTask = null;
+  let closestOffset = Number.NEGATIVE_INFINITY;
+
+  els.forEach((task) => {
+    const { top } = task.getBoundingClientRect();
+
+    const offset = mouseY - top;
+
+    if (offset < 0 && offset > closestOffset) {
+      closestOffset = offset;
+      closestTask = task;
+    }
+  });
+
+  return closestTask;
+};

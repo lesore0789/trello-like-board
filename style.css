@@ -133,14 +133,11 @@ body{
 }
 
 .buttons {
-  padding-left: 20px;
+  padding-left: 15px;
   display: flex;
   gap: 10px;
+  margin-left: auto;
 }
-/* .edit-icon i, .delete-icon i {
-  position: relative;
-  right: -3px;
-} */
 
 .edit-icon i:hover{
   color: #ffa500;
@@ -171,6 +168,11 @@ body{
   height: 20px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+#colorbox span:hover {
+  scale:1.2;
+  transition: 0.2s;
 }
 
 .is-dragging {
